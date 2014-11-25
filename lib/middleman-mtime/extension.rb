@@ -3,7 +3,7 @@ module Middleman
     module ResourceIncluded
       def mtime
         @_mtime ||=
-          if File.exists?(source_file)
+          if File.exists?(source_file.to_s)
             File.mtime(source_file)
           else
             Time.now
